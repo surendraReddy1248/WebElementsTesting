@@ -19,18 +19,6 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
-      <div class="dropdown">
-	    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-	      Dropdown button
-	    </button>
-	    <div class="dropdown-menu">
-	      <a class="dropdown-item" href="#">Link 1</a>
-	      <a class="dropdown-item" href="#">Link 2</a>
-	      <a class="dropdown-item" href="#">Link 3</a>
-	    </div>
-  	</div>
-  	<br>
-  	<br>
   	<div>
 		<h4>Multi Selection box</h4>
 		<div>
@@ -47,13 +35,14 @@
 	<div>
 		<h4>Text Box with Preloaded Text</h4>
 		<div>
-		<input type="text" name="fname" value="Selenium WebDriver" id="textbox1">
+		<input type="text" name="fname" value="AutomationTestersWorld" id="textbox1">
 		</div>
 	</div>
 	<br>
   	<br>
 	<div>
-		<a id="link1" href="https://automationtestersworld.wordpress.com/" value="link1"> Selenium143 </a>
+		<h4>Link opens in the same tab</h4>
+		<a id="link1" href="https://automationtestersworld.wordpress.com/" value="link1"> ATW Link! </a>
 	</div>
 	<br>
   	<br>
@@ -62,12 +51,174 @@
 	</div>
 	<br>
   	<br>
+  	<div>
+  		<select id="drop1" class="combobox" name="SiteMap">
+		<option id="ironman1" value="abc" selected="">TataMotors
+		</option><option id="ironman2" value="def">Suzuki
+		</option><option id="ironman3" value="ghi">Hyundai
+		</option><option id="ironman4" value="jkl">Kia
+		</option><option id="ironman5" value="mno">Nissan
+		</option></select>
+	</div>
+	<br>
+  	<br>
+  	<div>
+  		<h4>Link opens in new tab</h4>
+		<a href="https://automationtestersworld.wordpress.com/" target="_blank" id="link2">ATW Link!</a>
+	</div>
+	<br>
+  	<br>
+  	<div>
+		<h4>Enabled Button</h4>
+		<div>
+		<button id="but1" type="button" contenteditable="true">Button1</button>
+		</div>
+	</div>
+	<br>
+  	<br>
+  	<div>
+		<h4>Disabled Button</h4>
+		<div>
+		<button id="but2" type="button" disabled>Button2</button>
+		</div>
+	</div>
+	<br>
+  	<br>
+	<div>
+		<h4>Disabled Text Box</h4>
+		<div>
+		<input id="tb1" type="text" name="lname" disabled="">
+		</div>
+	</div>
+	<br>
+  	<br>
+	<div>
+		<h4>Readonly TextBox</h4>
+		<input id="rotb" type="text" readonly="" value="ReadThisText">
+	</div>
+	<br>
+  	<br>
+	<div>
+		<h4>Buttons with same name attribute values</h4>
+		<div>
+		<button name="samename" type="button">Submit</button>
+		<button name="samename" type="button">Login</button>
+		<button name="samename" type="button">Register</button>
+		</div>
+	</div>
+	<br>
+  	<br>
+  	<div>
+		<h4>Default Selected Check Box option</h4>
+		<div>
+		Orange<input id="checkbox1" type="checkbox" name="color" value="orange" checked="">
+		Blue<input id="checkbox2" type="checkbox" name="color" value="blue">
+		</div>
+	</div>
+	<br>
+  	<br>
+  	<div>
+	<h4>Buttons with same name attribute values</h4>
+		<div>
+			<button name="samename" type="button">Submit</button>
+			<button name="samename" type="button">Login</button>
+			<button name="samename" type="button">Register</button>
+		</div>
+	</div>
+	<br>
+  	<br>
+	<div>
+		<h4>DisplayForTimeAndDissapear</h4>
+		<div>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+		    <script type="text/javascript"> 
+		      $(document).ready( function() {
+		        $('#deletesuccess').delay(25000).fadeOut();
+		      });
+		    </script>
+		<script>
+		function displayAlert(){
+		alert("Hello");
+		}
+		</script>
+		<div id="deletesuccess"> This text will disappear after 25 seconds </div>
+		<input id="alert2" type="button" onclick="displayAlert()" value="ClickAfterTextDissappears">
+		</div>
+	</div>
+	<br>
+  	<br>
+	<div>
+		<h4>TextWillBeDisplayedWithDelay</h4>
+		<div>
+		<script>
+		window.onload = function(){
+		  // Change this value to however many seconds you want to delay the text by.
+		  var theDelay = 12;
+		  var timer = setTimeout("showdelayedText()",theDelay*1000)
+		}
+		function showdelayedText(){
+		  document.getElementById("delayedText").style.visibility = "visible";
+		}
+		</script>
+			<div id="delayedText" style="visibility: hidden;">
+			This text is displayed after 12 seconds of wait.
+			</div>
+		</div>
+	</div>
+	<br>
+  	<br>
+  	<div>
+		<h4>TimerEnableButton</h4>
+		<div>
+		<script type="text/javascript"> 
+		      
+		      	setTimeout(function() {
+		        document.getElementById('timerButton').disabled = false;
+		    }, 5000);
+		      
+		</script>
 
+		<script>
+		function displaytimerAlert(){
+		alert("Timer Enabled Button Alert");
+		}
+		</script>
 
+		<input id="timerButton" type="button" value="Button3" onclick="displaytimerAlert()" disabled>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div>
+		<h4>Disable Enabled Button</h4>
+		<div>
+		<button id="myBtn">My Button</button>
+
+		<p>Click the below "Try it" button to disable the button after 3 seconds.</p>
+
+		<button onclick="setTimeout(myFunctionABC,3000)">Try it</button>
+
+		<script type="text/javascript">
+		function myFunctionABC() {
+		  document.getElementById("myBtn").disabled = true;
+		}
+		</script>
+		</div>
+	</div>
+	<br>
+	<br>
+	<div>
+		<div>
+		<button id="button9" type="button">Button X</button>
+		<button id="button9" type="button">Button Y</button>
+		</div>
+	</div>
+	<br>
+	<br>
     </div>
     <div class="col-sm-4">
       <div>
-		  <h2>Stacked form</h2>
+		  <h2>Simple Login Page</h2>
 		  <form>
 		    <div class="form-group">
 		      <label for="email">Email:</label>
@@ -77,14 +228,95 @@
 		      <label for="pwd">Password:</label>
 		      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
 		    </div>
-		    <div class="form-group form-check">
-		      <label class="form-check-label">
-		        <input class="form-check-input" type="checkbox" name="remember"> Remember me
-		      </label>
-		    </div>
-		    <button type="submit" onclick="formaction()" class="btn btn-primary">Submit</button>
+		    <button type="submit" onclick="emailpwdaction()" class="btn btn-primary">Submit</button>
 		  </form>
 		</div>
+		<br>
+		<br>
+		<div>
+		<h4>Popup Window</h4>
+			<div>
+			<script type="text/javascript">
+			// Popup window code
+			function newPopup(url) {
+				popupWindow = window.open(
+					url,'popUpWindow','height=300,width=400,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+			}
+			</script>
+			<p><a href="JavaScript:newPopup('https://automationtestersworld.wordpress.com/');">Open a popup window</a></p>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>UploadFile</h4>
+			<div>
+			<form action="demo_form.asp">
+			  <input type="file" id="uploadfile" name="anyfile">
+			</form>
+		<!--!doctype-->
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<div>
+			<script>
+			function dblclickAlert(){
+			alert("Double Click Successfull");
+			}
+			</script>
+			<button ondblclick="dblclickAlert()"> Double click Here   </button>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<div>
+			Single Option:<input id="dte" type="checkbox" value="Pen" disabled="">
+
+
+			<p>The above Single Option will be enabled in 10 seconds after clicking on below Check this button</p>
+
+			<button onclick="setTimeout(Checkthisfunc,10000)">Check this</button>
+
+			<script type="text/javascript">
+			function Checkthisfunc() {
+			  document.getElementById("dte").disabled = false;
+			}
+			</script>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Text Area Field</h4>
+			<div>
+			<textarea id="ta1" rows="10" cols="50" contenteditable="true">
+			</textarea>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h6>Text Area Field with Prefilled Text</h6>
+			<div>
+			<textarea rows="10" cols="30">Automation Testers World!!!
+			</textarea>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div class="widget HTML" data-version="1" id="HTML21">
+			<h2 class="title">Iframe1 &amp; Iframe2</h2>
+			<div class="widget-content">
+			<iframe id="iframe1" src="" height="300 " width="300">
+			</iframe><iframe id="iframe2" src="https://automationtestersworld.wordpress.com/" height="600 " width="300">
+			</iframe>
+			</div>
+		</div>
+		<br>
+		<br>
     </div>
     <div class="col-sm-4">
       <div>
@@ -116,14 +348,83 @@
 		    </tbody>
 		  </table>
 		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Ordered List</h4>
+			<div>
+			<ol>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li>Four</li>
+			<li>Five</li>
+			<li>Six</li>
+			</ol>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>UnOrdered list</h4>
+			<div>
+			<ul>
+			<li>Six</li>
+			<li>Five</li>
+			<li>Four</li>
+			<li>Three</li>
+			<li>Two</li>
+			<li>One</li>
+			</ul>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Image Element</h4>
+			<div>
+			<img src="https://automationtestersworld.files.wordpress.com/2021/04/pexels-photo-7439135.jpeg" height="200px" width="150px">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Search This Blog</h4>
+			<div>
+			<div id="BlogSearch1_form">
+			<form action="http://omayo.blogspot.com/search" class="gsc-search-box" target="_top">
+			<table cellpadding="0" cellspacing="0" class="gsc-search-box">
+			<tbody>
+			<tr>
+			<td class="gsc-input">
+			<input autocomplete="off" class="gsc-input" name="q" size="10" title="search" type="text" value="">
+			</td>
+			<td class="gsc-search-button">
+			<input class="gsc-search-button" title="search" type="submit" value="Search">
+			</td>
+			</tr>
+			</tbody>
+			</table>
+			</form>
+			</div>
+			</div>
+		</div>
+		<br>
+		<br>
     </div>
   </div>
 </div>
 <script type="text/javascript">
-function formaction(){
+function emailpwdaction(){
 	var email = document.getElementById("email").value;
 	var pwd = document.getElementById("pwd").value;
-	alert("Entered Email--"+email+"\n"+"Entered Password--"+pwd);
+	if(email !="" && email!=undefined && pwd !="" && pwd!=undefined)
+	{
+		alert("Entered Email--"+email+"\n"+"Entered Password--"+pwd);
+	}
+	else{
+		alert("Please enter Email and Password to Login")
+	}
 }
 </script>>
 </body>
