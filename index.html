@@ -215,6 +215,119 @@
 	</div>
 	<br>
 	<br>
+	<div>
+		<h4>Select multiple options</h4>
+		<div>
+		Pen:<input type="checkbox" name="accessories" value="Pen">
+		Book:<input type="checkbox" name="accessories" value="Book" checked="">
+		Laptop:<input type="checkbox" name="accessories" value="Laptop">
+		Bag:<input type="checkbox" name="accessories" value="Bag">
+		</div>															
+	</div>
+	<br>
+	<br>
+	<div>
+		<h4>TestDoubleClick</h4>
+		<div>
+		<p id="testdoubleclick" ondblclick="dblclicktest()">Double-click</p>
+		<p id="demo"></p>
+		<script>
+		function dblclicktest() {
+		    document.getElementById("demo").innerHTML = "You double clicked it";
+		}
+		</script>
+		<!--!doctype-->
+		</div>
+	</div>
+	<br>
+	<br>
+	<div>
+	<h4>Delayed-Button-Dropdown</h4>
+	<div>
+
+	<style>
+	.dropbtn {
+	    background-color: #4CAF50;
+	    color: white;
+	    padding: 16px;
+	    font-size: 16px;
+	    border: none;
+	    cursor: pointer;
+	}
+
+	.dropbtn:hover, .dropbtn:focus {
+	    background-color: #3e8e41;
+	}
+
+	.dropdown {
+	    float: right;
+	    position: relative;
+	    display: inline-block;
+	    
+	}
+
+	.dropdown-content {
+	    display: none;
+	    position: absolute;
+	    background-color: #f9f9f9;
+	    min-width: 160px;
+	    overflow: auto;
+	    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+	    right: 0;
+	}
+
+	.dropdown-content a {
+	    color: black;
+	    padding: 12px 16px;
+	    text-decoration: none;
+	    display: block;
+	}
+
+	.dropdown a:hover {background-color: #f1f1f1}
+
+	.show {display:block;}
+	</style>
+
+
+
+
+
+	<div class="dropdown">
+	<button onclick="setTimeout(myFunction,3000)" class="dropbtn">Dropdown</button>
+	  <div id="myDropdown" class="dropdown-content">
+	    <a href="http://facebook.com" disabled="">Facebook</a>
+	    <a href="http://flipkart.com/">Flipkart</a>
+	    <a href="http://gmail.com/">Gmail</a>
+	  </div>
+	</div>
+
+	<script>
+	/* When the user clicks on the button, 
+	toggle between hiding and showing the dropdown content */
+	function myFunction() {
+	    document.getElementById("myDropdown").classList.toggle("show");
+	}
+
+	// Close the dropdown if the user clicks outside of it
+	window.onclick = function(event) {
+	  if (!event.target.matches('.dropbtn')) {
+
+	    var dropdowns = document.getElementsByClassName("dropdown-content");
+	    var i;
+	    for (i = 0; i < dropdowns.length; i++) {
+	      var openDropdown = dropdowns[i];
+	      if (openDropdown.classList.contains('show')) {
+	        openDropdown.classList.remove('show');
+	      }
+	    }
+	  }
+	}
+	</script>
+	<!--!doctype-->
+	</div>
+	</div>
+	<br>
+	<br>
     </div>
     <div class="col-sm-4">
       <div>
@@ -391,26 +504,133 @@
 		<div>
 			<h4>Search This Blog</h4>
 			<div>
-			<div id="BlogSearch1_form">
-			<form action="http://omayo.blogspot.com/search" class="gsc-search-box" target="_top">
-			<table cellpadding="0" cellspacing="0" class="gsc-search-box">
+				<script type="text/javascript">
+				findstring = function searchinpage(){
+					var searchval = document.getElementById("searchtext").value;
+					alert(searchval+" found?--"+window.find(searchval,false));
+					console.log(window);
+					//window.find(searchval,false);
+				}
+			</script>
+			<form>
+			<table>
 			<tbody>
 			<tr>
-			<td class="gsc-input">
-			<input autocomplete="off" class="gsc-input" name="q" size="10" title="search" type="text" value="">
+			<td>
+			<input autocomplete="off" name="q" size="10" id="searchtext"title="search" type="text" value="">
 			</td>
-			<td class="gsc-search-button">
-			<input class="gsc-search-button" title="search" type="submit" value="Search">
+			<td>
+			<input onclick = "findstring()" title="search" type="submit" value="Search">
 			</td>
 			</tr>
 			</tbody>
 			</table>
 			</form>
 			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Radio options</h4>
+			<div>
+			<input id="radio1" type="radio" name="gender" value="male"> Male<br>
+			<input id="radio2" type="radio" name="gender" value="female"> Female<br>
 			</div>
 		</div>
 		<br>
 		<br>
+		<div>
+			<h4>GetPrompt</h4>
+			<div>
+			<input id="prompt" type="button" onclick="getPrompt()" value="GetPrompt">
+			<script>
+			function getPrompt(){
+			prompt("What is your name?");
+			}
+			</script>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Confirmation Dialog</h4>
+			<div>
+			<script>
+			function launchConfirmation(){
+			confirm("Press OK to confirm");
+			}
+
+			</script>
+			<input id="confirm" type="button" onclick="launchConfirmation()" value="GetConfirmation">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Hidden Button</h4>
+			<div>
+			<input id="hbutton" type="button" value="HiddenButton" hidden="">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Locate using name attribute</h4>
+			<div>
+			<input type="text" name="textboxn">
+			</div>	
+		</div>
+		<br>
+		<br>
+		<div>
+			<h2>Other Sites to Practice Automation</h2>
+			<div>
+			<ul>
+			<li><a href="http://compendiumdev.co.uk/selenium/basic_web_page.html">compendiumdev</a></li>
+			<li><a href="http://only-testing-blog.blogspot.in/2014/01/textbox.html">onlytestingblog</a></li>
+			<li><a href="http://testwisely.com/demo">testwisely</a></li>
+			<li><a href="http://jqueryui.com/">jqueryui</a></li>
+			<li><a href="http://book.theautomatedtester.co.uk">theautomatedtester</a></li>
+			</ul>
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Having same id and name attribute values</h4>
+			<div>
+			<input type="button" id="sa" name="sa" value="SameIDName">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Locate using class</h4>
+			<div>
+			<input type="text" class="classone">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>element having same class name as above field</h4>
+			<div>
+			<input type="text" class="classone">
+			</div>
+		</div>
+		<br>
+		<br>
+		<div>
+			<h4>Select a vehicle</h4>
+			<div>
+			Bicycle:<input type="radio" name="vehicle" value="Bicycle">
+			Bike:<input type="radio" name="vehicle" value="Bike" checked="">
+			Car:<input type="radio" name="vehicle" value="Car"><br>
+			</div>
+		</div>
+		<br>
+		<br>
+		
     </div>
   </div>
 </div>
